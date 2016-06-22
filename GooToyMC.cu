@@ -1716,7 +1716,9 @@ for(int k=0;k<8;k++){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+  //sprintf(filename,"txt_files_imp/%d/%d/%d%d%d/%d-ToyMCDeltaChisGoox%d%d%d-%d-%d-%d.txt",Date,iter,gFix,mFix,sNeg,iter,gFix,mFix,sNeg,Date,Clock,toys);
+  ofstream timeFile("./Times/time.txt",std::ofstream::app);
+  
   cout<<endl;
   cout<<"=================================================================================="<<endl;
   cout<<"Total cycles            "<< cycles <<endl;
@@ -1724,6 +1726,6 @@ for(int k=0;k<8;k++){
   Double_t myCPUc = (stopCPU - startCPU)*10000;
   cout<<"Computation time:       " << (myCPUc / CLOCKS_PER_SEC) << endl ;
   cout<<"=================================================================================="<<endl;
-
+ timeFile<<(myCPUc / CLOCKS_PER_SEC)<<std::endl;
       return 0;
 }
